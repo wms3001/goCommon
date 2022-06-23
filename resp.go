@@ -1,6 +1,9 @@
 package goCommon
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"github.com/wms3001/goTool"
+)
 
 //
 //  Resp
@@ -21,4 +24,9 @@ type Resp struct {
 func (resp *Resp) ToJson() string {
 	json, _ := json.Marshal(resp)
 	return string(json)
+}
+
+func (resp *Resp) DataToMap() map[string]interface{} {
+	tool := &goTool.GoTool{}
+	return tool.JsonToMap(resp.Data)
 }
