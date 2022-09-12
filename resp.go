@@ -10,9 +10,10 @@ import (
 //  @Description: 统一返回结果
 //
 type Resp struct {
-	Code    int    `json:"code"`
-	Message string `json:"message"`
-	Data    string `json:"data"`
+	Code     int    `json:"code"`
+	HttpCode int    `json:"httpCode""`
+	Message  string `json:"message"`
+	Data     string `json:"data"`
 }
 
 //
